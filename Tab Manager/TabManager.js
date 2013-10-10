@@ -130,6 +130,7 @@ function TabManager(){
 					tab = tabs[i];
 					var tabselectnum= tab.getElementsByClassName("tabselectnum")[0];
 					tabselectnum.innerHTML = i + 1;
+					tabselectnum.style.backgroundColor = "#3B5686";
 				}
 			}
 			
@@ -141,7 +142,9 @@ function TabManager(){
 						tab.addClass("selected");
 					}else{
 						tab.removeClass("selected");
-						tab.getElementsByClassName("tabselectnum")[0].innerHTML = "";
+						var tabselectnum = tab.getElementsByClassName("tabselectnum")[0];
+						tabselectnum.innerHTML = "";
+						tabselectnum.style.backgroundColor = "";
 					}
 				}
 				refreshTabSelectNums();
@@ -164,6 +167,7 @@ function TabManager(){
 					tab = tabs[i];
 					var tabselectnum = tab.getElementsByClassName("tabselectnum")[0];
 					tabselectnum.innerHTML = "";
+					tabselectnum.style.backgroundColor = "";
 				}
 			});
 			

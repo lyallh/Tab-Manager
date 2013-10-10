@@ -76,14 +76,19 @@ body{
 	height:100%;
 	white-space:nowrap;
 	overflow:hidden;
+	text-overflow:ellipsis;
 }
 .tab.full > .tabselectnum{
 	float:right;
-	margin-right:-16px;
-	color:#3B5686;
-	width:10px;
-	height:100%;
+	margin-right:-46px;
+	margin-top:-2px;
+	padding-left:26px;
+	padding-top: 2px;
+	color:white;
+	width:20px;
+	height:18px;
 }
+
 .tab:first-child, .newliner + .icon{
 	margin-left:0px;
 }		
