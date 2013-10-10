@@ -123,6 +123,15 @@ function TabManager(){
 					});
 				}
 			});
+
+			function refreshTabSelectNums(){
+				var tabs = This.getElementsByClassName("tab selected");
+				for(var i = 0; i < tabs.length && i < 9; i++){
+					tab = tabs[i];
+					var tabselectnum= tab.getElementsByClassName("tabselectnum")[0];
+					tabselectnum.innerHTML = i + 1;
+				}
+			}
 			
 			search.on("keyup",function(){
 				var tabs = This.getElementsByClassName("tab");
@@ -132,14 +141,30 @@ function TabManager(){
 						tab.addClass("selected");
 					}else{
 						tab.removeClass("selected");
+						tab.getElementsByClassName("tabselectnum")[0].innerHTML = "";
 					}
 				}
+				refreshTabSelectNums();
 			});
 			search.on("keydown",function(e){
 				console.log(e.keyCode);
 				if(e.keyCode == 13){
 					addWindow();
-				}					
+				}else{
+					var tabs = This.getElementsByClassName("tab selected");
+					var tabNum = e.keyCode - 49;
+					if(tabNum >= 0 && tabNum < tabs.length && tabNum < 9){
+						chrome.tabs.update(tabs[tabNum].ID,{selected:true});
+					}
+				}
+			});
+			search.on("blur",function(){
+				tabs = This.getElementsByClassName("tab");
+				for(var i = 0; i < tabs.length; i++){
+					tab = tabs[i];
+					var tabselectnum = tab.getElementsByClassName("tabselectnum")[0];
+					tabselectnum.innerHTML = "";
+				}
 			});
 			
 			layout.on("click",function(){

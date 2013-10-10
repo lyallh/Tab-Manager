@@ -13,6 +13,7 @@ function Tab(t,w){
 	if(This.Window.TabManager.Layout == "vertical"){
 		This.style.paddingLeft = "20px";
 		This.appendChild(Div("tabtitle",This.title));
+		This.appendChild(Div("tabselectnum",This.title));
 	}
 	if(t.incognito){
 		This.addClass("incognito");
