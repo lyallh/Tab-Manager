@@ -158,6 +158,7 @@ function TabManager(){
 					var tabNum = e.keyCode - 49;
 					if(tabNum >= 0 && tabNum < tabs.length && tabNum < 9){
 						chrome.tabs.update(tabs[tabNum].ID,{selected:true});
+						window.close();
 					}
 				}
 			});
