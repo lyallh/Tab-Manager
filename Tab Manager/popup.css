@@ -80,12 +80,12 @@ body{
 }
 .tab.full > .tabselectnum{
 	float:right;
-	margin-right:-46px;
+	margin-right:-18px;
 	margin-top:-2px;
-	padding-left:26px;
+	padding-left:6px;
 	padding-top: 2px;
 	color:white;
-	width:20px;
+	width:12px;
 	height:18px;
 }
 
